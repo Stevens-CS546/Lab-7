@@ -10,7 +10,7 @@ MongoClient.connect(fullMongoUrl)
         var myCollection = db.collection("COLLECTIONNAME");
 
         // setup your body
-        exports.createComment = function(comment, name) {
+        exports.createComment = function(comment) {
             // throws an error if there has been invalid input
 
             // return a promise that resolves the new comment
