@@ -21,14 +21,19 @@ app.use('/assets', express.static('static'));
 app.post("/", function(request, response) {
     var comment = request.body.comment;
 
-    // On error, do: 
-    // response.render("pages/home", { error: null, comments: ALL THE COMMENTS });
+    // In this route, you will call the createComment function for your data module
+    // and respond with the result of that promise            
+        // On error, do: 
+        // response.render("pages/home", { error: null, comments: ALL THE COMMENTS });
 
-    // On success, do:
-    response.redirect("/");
+        // On success, do:
+        response.redirect("/");
 });
 
 app.get("/", function(request, response) {
+    // In this route, you will call the getAllComments function for your data module
+    // and respond with the result of that promise as your comments section
+
     response.render("pages/home", { error: null, comments: [] });
 });
 
