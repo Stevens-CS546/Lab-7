@@ -11,7 +11,8 @@ MongoClient.connect(fullMongoUrl)
 
         // setup your body
         exports.createComment = function(comment) {
-            // throws an error if there has been invalid input
+            // you may return Promise.reject("error message"); if there is an error, such as a comment not being provided;
+	    // this will result in a rejected promise immediately being returned
 
             // return a promise that resolves the new comment
             return myCollection.insertOne({ _id: Guid.create().toString(), comment: comment }).then(function(newDoc) {
